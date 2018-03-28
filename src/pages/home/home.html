@@ -1,30 +1,41 @@
 <ion-header no-border>
   <ion-navbar color="primary">
     <ion-title>
-      Bank Account
+      Bank Accounts
     </ion-title>
   </ion-navbar>
 </ion-header>
 
+
+
 <ion-content padding>
-  <div>
-    <h4>Hi, {{bankAccount.accountHolder}}</h4>
-    <h1>Account balance: ${{bankAccount.totalBalance}}</h1>
-  </div>
-  <div>
-    <span>$</span>
-    <input id="depositField" [(ngModel)]="bankAccount.depositAmount">
-    <button id="depositBtn" (click)="bankAccount.deposit()">DEPOSIT</button>
-  </div>
-  <div padding-top="15px">
-    <span>$</span>
-    <input id="withdrawalField" [(ngModel)]="bankAccount.withdrawalAmount">
-    <button id="withdrawalBtn" (click)="bankAccount.withdraw()">WITHDRAW</button>
-  </div>
-  <div padding-top="15px">
-    <h6>Status: {{bankAccount.status}}</h6>
-  </div>
-  <div>
-    <button id="nextBtn" (click)="goToNextPage()">Go To Next Page</button>
-  </div>
+  <h4>Hi, {{bankAccount1.accountHolder}}!</h4>
+  <ion-card>
+    <ion-card-header>
+      <h2>{{bankAccount1.accountType}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <h1>${{bankAccount1.totalBalance}}</h1>
+    </ion-card-content>
+    <a (click)="viewAccount(bankAccount1)"><ion-icon name="arrow-round-forward">View Account</ion-icon></a>
+  </ion-card>
+  <ion-card>
+      <ion-card-header>
+        <h2>{{bankAccount2.accountType}}</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>${{bankAccount2.totalBalance}}</h1>
+      </ion-card-content>
+      <a (click)="viewAccount(bankAccount2)"><ion-icon name="arrow-round-forward">View Account</ion-icon></a>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+          <h2>{{bankAccount3.accountType}}</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <h1>${{bankAccount3.totalBalance}}</h1>
+        </ion-card-content>
+        <a (click)="viewAccount(bankAccount3)"><ion-icon name="arrow-round-forward">View Account</ion-icon></a>
+      </ion-card>
+
 </ion-content>

@@ -8,12 +8,17 @@ import { AccountPage } from '../account/account';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  bankAccount: BankAccount;
+  bankAccount1: BankAccount;
+  bankAccount2: BankAccount;
+  bankAccount3: BankAccount;
+
   constructor(public navCtrl: NavController) {
-    this.bankAccount = new BankAccount('45876', 'Jack Dawson', 1540);
+    this.bankAccount1 = new BankAccount('45876', 'Jack Dawson', 1540, 'Share Draft');
+    this.bankAccount2 = new BankAccount('45876', 'Jack Dawson', 1700, 'Savings');
+    this.bankAccount3 = new BankAccount('45876', 'Jack Dawson', 4500, 'Savings');
   }
-  goToNextPage() {
-    this.navCtrl.push(AccountPage);
+  viewAccount(selectedAccount: BankAccount) {
+    this.navCtrl.push(AccountPage, {account: selectedAccount});
   }
 
 }

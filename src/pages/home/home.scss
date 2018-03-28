@@ -2,9 +2,11 @@ page-home {
 
 }
 button {
-    background-color: #61B329;
+    background-color: #009900;
     color: white;
-    height: 20px;
     border-radius: 5px;
+    padding: 5px 10px;
 }
-
+.content-md, .content-ios {
+    background-color: #f2f2db;
+}
