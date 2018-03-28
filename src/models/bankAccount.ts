@@ -22,12 +22,12 @@ export class BankAccount {
         }
     };
     withdraw () {
-        if (this.totalBalance - parseFloat(this.withdrawalAmount) >= 1) {
+        if (parseFloat(this.withdrawalAmount) <= 0) {
+            this.status = 'Withdrawal amount must be greater than $0.00.';
+        } else if (this.totalBalance - parseFloat(this.withdrawalAmount) > 0) {
             this.totalBalance = this.totalBalance - parseFloat(this.withdrawalAmount);
             this.status = 'Successfully withdrew $' + this.withdrawalAmount + '.';
             this.withdrawalAmount = "";
-        } else if (parseFloat(this.withdrawalAmount) <= 0) {
-            this.status = 'Withdrawal amount must be greater than $0.00.';
         } else {
             this.status = 'Withdrawal amount exceeds account balance.';
         }

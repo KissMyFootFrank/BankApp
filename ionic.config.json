@@ -1,6 +1,6 @@
 {
   "name": "BankApp",
-  "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {},
+  "app_id": "cac051ab"
 }
