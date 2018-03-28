@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-title>
+      Bank Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <h4>Hi, {{bankAccount.accountHolder}}</h4>
+    <h1>Account balance: ${{bankAccount.totalBalance}}</h1>
+  </div>
+  <div>
+    <span>$</span>
+    <input id="depositField" [(ngModel)]="bankAccount.depositAmount">
+    <button id="depositBtn" (click)="bankAccount.deposit()">DEPOSIT</button>
+  </div>
+  <div padding-top="15px">
+    <span>$</span>
+    <input id="withdrawalField" [(ngModel)]="bankAccount.withdrawalAmount">
+    <button id="withdrawalBtn" (click)="bankAccount.withdraw()">WITHDRAW</button>
+  </div>
+  <div padding-top="15px">
+    <h6>Status: {{bankAccount.status}}</h6>
+  </div>
+</ion-content>
